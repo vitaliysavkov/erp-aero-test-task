@@ -1,0 +1,32 @@
+version: '3.0'
+
+services:
+  web:
+    container_name: server
+    build:
+      context: .
+    env_file:
+      - .env
+    volumes:
+      - .:/src
+    command: npm run start
+    ports:
+      - ${PORT}:${PORT}
+    depends_on:
+      - mysql
+
+  mysql:
+    container_name: db
+    image: mysql:5.7
+    command: --explicit_defaults_for_timestamp
+    env_file:
+      - .env
+    ports:
+      - ${DB_PORT}:${DB_PORT}
+    volumes:
+      - ./src/db/scripts/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - my-db:/var/lib/mysql
+    restart: always
+
+volumes:
+  my-db:

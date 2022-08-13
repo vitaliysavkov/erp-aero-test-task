@@ -1,0 +1,23 @@
+CREATE DATABASE storage;
+
+USE storage;
+
+DROP TABLE IF EXISTS users;
+CREATE TABLE users(
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	login VARCHAR(30),
+	password VARCHAR(30),
+	refresh_token VARCHAR(100)
+);
+
+DROP TABLE IF EXISTS files;
+CREATE TABLE files(
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	user INT,
+	name VARCHAR(50),
+	ext VARCHAR(5),
+	size INT,
+	upload_date TIMESTAMP,
+	FOREIGN KEY (user) REFERENCES users(id),
+	content BLOB
+);
