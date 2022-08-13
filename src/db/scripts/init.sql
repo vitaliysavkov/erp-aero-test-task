@@ -16,8 +16,9 @@ CREATE TABLE files(
 	user INT,
 	name VARCHAR(50),
 	ext VARCHAR(5),
+	mime_type VARCHAR(30)
 	size INT,
-	upload_date TIMESTAMP,
-	FOREIGN KEY (user) REFERENCES users(id),
-	content BLOB
+	upload_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	content BLOB,
+	FOREIGN KEY (user) REFERENCES users(id) ON DELETE CASCADE
 );
