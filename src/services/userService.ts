@@ -1,17 +1,17 @@
 import { pool } from '../db/dbConnectionPool';
-import { Query } from 'mysql2';
 
 type User = {
     login: string
     password: string
-    refreshToken: string
+    refreshToken?: string
 }
 
-const addUser = async (user: User): Promise<Query> => {
-   const { login, password, refreshToken } = user;
-   const dbQuery: string = `INSERT INTO users(login, password, refreshToken)
-                                VALUES(?,?,?)`;
-   return pool.execute(dbQuery, [login, password, refreshToken]);
+const addUser = async (user: User): Promise<number> => {
+   const { login, password } = user;
+   const dbQuery: string = `INSERT INTO users(login, password)
+                                VALUES(?,?)`;
+   const result = await pool.query(dbQuery, [login, password]);
+   return result.values().next().value.insertId;
 }
 
-export { addUser }
+export { addUser, User }
