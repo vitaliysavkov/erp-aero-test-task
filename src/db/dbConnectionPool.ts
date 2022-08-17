@@ -1,11 +1,11 @@
-import { createPool, Pool } from 'mysql2';
+import { createPool, Pool } from 'mysql2/promise';
 import { mysqlConfig } from './dbConfig';
 
 let pool: Pool = null;
 
-const initDbConnection = () => {
+const initDbConnection = async () => {
     try {
-       pool = createPool(mysqlConfig);
+       pool = await createPool(mysqlConfig);
        console.log('Connected to database');
     } catch (error) {
         throw new Error('failed to initialized pool');
