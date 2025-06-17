@@ -1,0 +1,46 @@
+{
+  "version": "1.2.0",
+  "last_updated": "2024-03-20T12:00:00Z",
+  "plugins": [
+    {
+      "name": "Data Aggregator",
+      "path": "/plugins/data-aggregator",
+      "description": "Aggregates time series data with configurable windows and functions",
+      "author": "InfluxData Team",
+      "required_plugins": ["base-utils"],
+      "trigger_types_supported": ["scheduled", "on-write"],
+      "required_libraries": ["numpy", "pandas"],
+      "last_update": "2024-03-15T10:30:00Z"
+    },
+    {
+      "name": "Anomaly Detector",
+      "path": "/plugins/anomaly-detector",
+      "description": "Detects anomalies in time series data using statistical methods",
+      "author": "ML Team",
+      "required_plugins": ["data-aggregator"],
+      "trigger_types_supported": ["scheduled"],
+      "required_libraries": ["scikit-learn", "numpy"],
+      "last_update": "2024-03-10T15:45:00Z"
+    },
+    {
+      "name": "Alert Manager",
+      "path": "/plugins/alert-manager",
+      "description": "Manages and sends alerts based on threshold conditions",
+      "author": "Monitoring Team",
+      "required_plugins": [],
+      "trigger_types_supported": ["scheduled", "http"],
+      "required_libraries": ["requests"],
+      "last_update": "2024-03-18T09:15:00Z"
+    },
+    {
+      "name": "Data Transformer",
+      "path": "/plugins/data-transformer",
+      "description": "Transforms data between different formats and structures",
+      "author": "ETL Team",
+      "required_plugins": ["base-utils"],
+      "trigger_types_supported": ["on-write", "http"],
+      "required_libraries": ["pandas", "numpy"],
+      "last_update": "2024-03-12T14:20:00Z"
+    }
+  ]
+}
