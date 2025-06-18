@@ -31,16 +31,6 @@
       "trigger_types_supported": ["scheduled", "http"],
       "required_libraries": ["requests"],
       "last_update": "2024-03-18T09:15:00Z"
-    },
-    {
-      "name": "Data Transformer",
-      "path": "/plugins/data-transformer",
-      "description": "Transforms data between different formats and structures",
-      "author": "ETL Team",
-      "required_plugins": ["base-utils"],
-      "trigger_types_supported": ["on-write", "http"],
-      "required_libraries": ["pandas", "numpy"],
-      "last_update": "2024-03-12T14:20:00Z"
     }
   ]
 }
