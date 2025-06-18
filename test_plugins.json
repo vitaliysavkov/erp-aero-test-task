@@ -7,7 +7,7 @@
       "path": "/plugins/data-aggregator",
       "description": "Aggregates time series data with configurable windows and functions",
       "author": "InfluxData Team",
-      "required_plugins": ["base-utils"],
+      "required_plugins": [],
       "trigger_types_supported": ["scheduled", "on-write"],
       "required_libraries": ["numpy", "pandas"],
       "last_update": "2024-03-15T10:30:00Z"
