@@ -11,6 +11,7 @@
         "data-aggregator"
       ],
       "trigger_types_supported": [
+        "on-write",
         "http"
       ],
       "required_libraries": [
