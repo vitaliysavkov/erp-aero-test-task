@@ -1,4 +1,6 @@
 {
+  "version": "1.2.0",
+  "last_updated": "2024-03-20T12:00:00Z",
   "plugins": [
     {
       "name": "Plugin 1",
