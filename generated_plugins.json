@@ -10,7 +10,9 @@
       "required_plugins": [
         "data-aggregator"
       ],
-      "trigger_types_supported": ["on-write","http"],
+      "trigger_types_supported": [
+        "http"
+      ],
       "required_libraries": [
         "matplotlib",
         "seaborn",
