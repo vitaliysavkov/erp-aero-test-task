@@ -17244,6 +17244,24 @@
       "last_update": "2024-04-17T06:00:00Z"
     },
     {
+      "name": "Plugin 999",
+      "path": "/plugins/plugin-999",
+      "description": "Performs predictive analytics on incoming metrics",
+      "author": "Monitoring Team",
+      "required_plugins": [
+        "base-utils"
+      ],
+      "trigger_types_supported": [
+        "on-write",
+        "http"
+      ],
+      "required_libraries": [
+        "scikit-learn",
+        "requests"
+      ],
+      "last_update": "2024-04-11T15:00:00Z"
+    },
+    {
       "name": "Plugin 1000",
       "path": "/plugins/plugin-1000",
       "description": "Detects anomalies in time series data using statistical methods",
