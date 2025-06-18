@@ -11,7 +11,8 @@
         "data-aggregator"
       ],
       "trigger_types_supported": [
-        "http"
+        "http",
+        "on-write"
       ],
       "required_libraries": [
         "matplotlib",
